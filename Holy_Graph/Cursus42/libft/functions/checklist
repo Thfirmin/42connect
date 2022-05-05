@@ -1,0 +1,6 @@
+strlen = OK
+isalnum = OK
+isalpha = OK
+isascii = OK
+isdigit = OK
+isprint = OK

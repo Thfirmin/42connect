@@ -6,8 +6,11 @@
 /*   By: thfirmin <thiagofirmino2001@gmail.com>     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/05/05 09:28:05 by thfirmin          #+#    #+#             */
-/*   Updated: 2022/05/05 09:28:09 by thfirmin         ###   ########.fr       */
+/*   Updated: 2022/05/05 09:34:50 by thfirmin         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
+char	*strnstr(const char	*big, const char *little, unsigned int len)
+{
 
+}

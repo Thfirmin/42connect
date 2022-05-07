@@ -9,7 +9,7 @@ int	main(void)
 	const char	c2[] = "";
 	char *ptr;
 
+
 	printf ("%p e %d\n", big, big);
 	printf ("%p e %d\n", &big, &big);
-	printf ("%s\n", strnstr(big, c2, 12));
 }

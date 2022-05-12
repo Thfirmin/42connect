@@ -6,8 +6,13 @@
 /*   By: thfirmin <thiagofirmino2001@gmail.com>     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/05/05 09:29:34 by thfirmin          #+#    #+#             */
-/*   Updated: 2022/05/05 09:29:35 by thfirmin         ###   ########.fr       */
+/*   Updated: 2022/05/11 03:32:26 by thfirmin         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-
+int	ft_tolower(int c)
+{
+	if ((char) c >= 'A' && (char) c <= 'Z')
+		c += 32;
+	return (c);
+}

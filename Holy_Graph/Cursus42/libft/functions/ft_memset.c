@@ -6,8 +6,15 @@
 /*   By: thfirmin <thiagofirmino2001@gmail.com>     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/05/05 09:29:22 by thfirmin          #+#    #+#             */
-/*   Updated: 2022/05/05 09:29:24 by thfirmin         ###   ########.fr       */
+/*   Updated: 2022/05/11 04:11:28 by thfirmin         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-
+void	*ft_memset(void *s, int c, unsigned int n)
+{
+	while (n--)
+	{
+		*(char *) s++ = (char) c;
+	}
+	return (s);
+}

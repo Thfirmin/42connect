@@ -3,30 +3,36 @@
 /*                                                        :::      ::::::::   */
 /*   ft_strlcat.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: thfirmin <thiagofirmino2001@gmail.com>     +#+  +:+       +#+        */
+/*   By: thfirmin <thfirmin@student.42.rio>         +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2022/05/05 04:30:58 by thfirmin          #+#    #+#             */
-/*   Updated: 2022/05/05 08:00:42 by thfirmin         ###   ########.fr       */
+/*   Created: 2022/05/12 20:26:01 by thfirmin          #+#    #+#             */
+/*   Updated: 2022/05/13 04:33:44 by thfirmin         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-unsigned int	ft_strlcat(char *dst, const char *src, unsigned int size)
+#include "libft.h"
+
+size_t	ft_strlcat(char *dst, const char *src, size_t dstsize)
 {
-	unsigned int	count;
-	unsigned int	aux;
-	
-	count = 0;
-	aux = 0;
-	while (dst[count] != '\0')
+	size_t	t_size;
+
+	t_size = ft_strlen(src);
+	while (*dst != '\0' && dstsize > 0)
 	{
-		count ++;
+		t_size ++;
+		dst ++;
+		dstsize --;
 	}
-	while ((count < (size - 1)) && src[aux] != '\0')
+	while (*src != '\0' && dstsize >= 1)
 	{
-		dst[count] = src[aux];
-		count ++;
-		aux ++;
+		if (dstsize == 1 || *src == '\0')
+		{
+			*dst = '\0';
+			break;
+		}
+		*dst++ = *src++;
+		dstsize --;	
 	}
-	dst[count] = '\0';
-	return (count);
+	return (t_size);
 }
+

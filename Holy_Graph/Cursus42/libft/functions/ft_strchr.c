@@ -3,12 +3,14 @@
 /*                                                        :::      ::::::::   */
 /*   ft_strchr.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: thfirmin <thiagofirmino2001@gmail.com>     +#+  +:+       +#+        */
+/*   By: thfirmin <thfirmin@student.42.rio>         +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2022/05/05 09:28:29 by thfirmin          #+#    #+#             */
-/*   Updated: 2022/05/09 13:27:24 by thfirmin         ###   ########.fr       */
+/*   Created: 2022/05/12 20:25:02 by thfirmin          #+#    #+#             */
+/*   Updated: 2022/05/12 20:25:43 by thfirmin         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
+
+#include "libft.h"
 
 char	*ft_strchr(const char *s, int c)
 {

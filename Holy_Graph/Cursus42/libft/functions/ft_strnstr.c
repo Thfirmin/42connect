@@ -3,35 +3,37 @@
 /*                                                        :::      ::::::::   */
 /*   ft_strnstr.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: thfirmin <thiagofirmino2001@gmail.com>     +#+  +:+       +#+        */
+/*   By: thfirmin <thfirmin@student.42.rio>         +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2022/05/05 09:28:05 by thfirmin          #+#    #+#             */
-/*   Updated: 2022/05/07 21:51:40 by thfirmin         ###   ########.fr       */
+/*   Created: 2022/05/12 20:36:45 by thfirmin          #+#    #+#             */
+/*   Updated: 2022/05/12 20:41:31 by thfirmin         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-char	*ft_strnstr(const char	*big, const char *little, unsigned int len)
-{
-	unsigned int	inbig;
-	unsigned int	inlit;
+#include "libft.h"
 
-	inbig = 0;
-	if (*little == '\0')
+char	*ft_strnstr(const char	*haystack, const char *needle, size_t len)
+{
+	unsigned int	instack;
+	unsigned int	inneedle;
+
+	instack = 0;
+	if (*needle == '\0')
 	{
-		return ((char *) big);
+		return ((char *) haystack);
 	}
-	while ((inbig < len) && (big[inbig] != '\0'))
+	while ((instack < len) && (haystack[instack] != '\0'))
 	{
-		inlit = 0;
-		while (big[inbig] == little[inlit])
+		inneedle = 0;
+		while (haystack[instack] == needle[inneedle])
 		{
-			inlit ++;
-			inbig ++;
-			if (little[inlit] == '\0')
-				return ((char *) big + (inbig - inlit));
+			inneedle ++;
+			instack ++;
+			if (needle[inneedle] == '\0')
+				return ((char *) haystack + (instack - inneedle));
 		}
-		if (big[inbig] != '\0')
-			inbig ++;
+		if (haystack[instack] != '\0')
+			instack ++;
 	}
 	return ('\0');
 }

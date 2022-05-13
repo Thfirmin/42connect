@@ -3,14 +3,16 @@
 /*                                                        :::      ::::::::   */
 /*   ft_strncmp.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: thfirmin <thiagofirmino2001@gmail.com>     +#+  +:+       +#+        */
+/*   By: thfirmin <thfirmin@student.42.rio>         +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2022/05/05 04:04:24 by thfirmin          #+#    #+#             */
-/*   Updated: 2022/05/05 04:29:09 by thfirmin         ###   ########.fr       */
+/*   Created: 2022/05/12 20:36:03 by thfirmin          #+#    #+#             */
+/*   Updated: 2022/05/12 20:36:42 by thfirmin         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-int ft_strncmp(const char *s1, const char *s2, unsigned int n)
+#include "libft.h"
+
+int ft_strncmp(const char *s1, const char *s2, size_t n)
 {
 	int	count;
 

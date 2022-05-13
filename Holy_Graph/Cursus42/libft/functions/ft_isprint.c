@@ -3,14 +3,15 @@
 /*                                                        :::      ::::::::   */
 /*   ft_isprint.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: thfirmin <thiagofirmino2001@gmail.com>     +#+  +:+       +#+        */
+/*   By: thfirmin <thfirmin@student.42.rio>         +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2022/05/05 03:35:50 by thfirmin          #+#    #+#             */
-/*   Updated: 2022/05/11 03:04:47 by thfirmin         ###   ########.fr       */
+/*   Created: 2022/05/12 20:15:16 by thfirmin          #+#    #+#             */
+/*   Updated: 2022/05/12 20:15:34 by thfirmin         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-//checks for any printable character including space.
+#include "libft.h"
+
 int	ft_isprint(int c)
 {
 	if (c >= ' ' && c <= '~')

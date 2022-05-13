@@ -3,14 +3,15 @@
 /*                                                        :::      ::::::::   */
 /*   ft_isdigit.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: thfirmin <thiagofirmino2001@gmail.com>     +#+  +:+       +#+        */
+/*   By: thfirmin <thfirmin@student.42.rio>         +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2022/05/05 03:46:19 by thfirmin          #+#    #+#             */
-/*   Updated: 2022/05/11 03:02:55 by thfirmin         ###   ########.fr       */
+/*   Created: 2022/05/12 20:14:50 by thfirmin          #+#    #+#             */
+/*   Updated: 2022/05/12 20:15:12 by thfirmin         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-//checks for a digit (0 through 9).
+#include "libft.h"
+
 int	ft_isdigit(int c)
 {
 	if (c >= '0' && c <= '9')

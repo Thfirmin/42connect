@@ -3,15 +3,15 @@
 /*                                                        :::      ::::::::   */
 /*   ft_isalnum.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: thfirmin <thiagofirmino2001@gmail.com>     +#+  +:+       +#+        */
+/*   By: thfirmin <thfirmin@student.42.rio>         +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2022/05/05 03:43:31 by thfirmin          #+#    #+#             */
-/*   Updated: 2022/05/11 03:03:40 by thfirmin         ###   ########.fr       */
+/*   Created: 2022/05/12 20:13:53 by thfirmin          #+#    #+#             */
+/*   Updated: 2022/05/12 20:14:07 by thfirmin         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-//checks for an alphanumeric character;
-//it is equivalent to (isalpha(c) || isdigit(c))
+#include "libft.h"
+
 int	ft_isalnum(int c)
 {
 	if (c >= '0' && c <= '9')

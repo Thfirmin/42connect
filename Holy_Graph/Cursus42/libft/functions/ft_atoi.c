@@ -3,11 +3,36 @@
 /*                                                        :::      ::::::::   */
 /*   ft_atoi.c                                          :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: thfirmin <thiagofirmino2001@gmail.com>     +#+  +:+       +#+        */
+/*   By: thfirmin <thfirmin@student.42.rio>         +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2022/05/05 09:29:53 by thfirmin          #+#    #+#             */
-/*   Updated: 2022/05/05 09:29:54 by thfirmin         ###   ########.fr       */
+/*   Created: 2022/05/12 16:37:31 by thfirmin          #+#    #+#             */
+/*   Updated: 2022/05/13 05:06:22 by thfirmin         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
+#include "libft.h"
+
+int	ft_atoi(const char *str)
+{
+	int	atoinum;
+	int	signal;
+
+	signal = 1;
+	atoinum = 0;
+	while (*str == ' ')
+		str++;
+	if (*str == '-')
+	{
+		signal = (signal * -1);
+		str++;
+	}
+	while (*str >= '0' && *str <= '9')
+	{
+		atoinum = (atoinum * 10);
+		atoinum = (atoinum + (*str - '0'));
+		str++;
+	}
+	atoinum = (atoinum * signal);
+	return (atoinum);
+}
 

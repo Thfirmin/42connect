@@ -3,22 +3,16 @@
 /*                                                        :::      ::::::::   */
 /*   ft_bzero.c                                         :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: thfirmin <thiagofirmino2001@gmail.com>     +#+  +:+       +#+        */
+/*   By: thfirmin <thfirmin@student.42.rio>         +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2022/05/05 09:30:32 by thfirmin          #+#    #+#             */
-/*   Updated: 2022/05/11 14:07:17 by thfirmin         ###   ########.fr       */
+/*   Created: 2022/05/12 16:37:55 by thfirmin          #+#    #+#             */
+/*   Updated: 2022/05/13 06:01:32 by thfirmin         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-void	ft_bzero(void *s, unsigned int n)
-{
-	unsigned int	count;
-	char 			*ptr;
+#include "libft.h"
 
-	count = 0;
-	ptr = s;
-	while (count < n)
-	{
-	:wq	ptr[count] = '\0';
-	}
+void	ft_bzero(void *s, size_t n)
+{
+	ft_memset(s, 0, n);
 }

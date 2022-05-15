@@ -9,9 +9,9 @@ void	ft_printarray(char *str, int size);
 
 int	main(void)
 {
-	char	s1[] = "O";
-	char	s2[] = "O";
-	size_t	n = 30;
+	char	s1[] = "Ola z";
+	char	s2[] = "ola m";
+	size_t	n = 3;
 
 	printf ("Expected: %d\n", memcmp(s1, s2, n));
 	printf ("Reallity: %d\n", ft_memcmp(s1, s2, n));

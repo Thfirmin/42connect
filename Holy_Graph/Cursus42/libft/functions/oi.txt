@@ -1,0 +1,67 @@
+=============================================================
+==============================*..............................
+printf("|=======================|| isalnum ||=======================|");
+printf("|=======================|| isalpha ||=======================|");
+printf("|=======================|| isascii ||=======================|");
+printf("|=======================|| isdigit ||=======================|");
+printf("|=======================|| isprint ||=======================|");
+printf("|=======================|| strlen ||========================|");
+printf("|=======================|| strnstr ||=======================|");
+printf("|=======================|| strchr ||========================|");
+printf("|=======================|| strlcat ||=======================|");
+printf("|=======================|| strlcpy ||=======================|");
+printf("|=======================|| strncmp ||=======================|");
+printf("|=======================|| strrchr ||=======================|");
+printf("|=======================|| tolower ||=======================|");
+printf("|=======================|| toupper ||=======================|");
+printf("|========================|| atoi ||=========================|");
+printf("|========================|| bzero ||========================|");
+printf("|=======================|| memchr ||========================|");
+printf("|=======================|| memcmp ||========================|");
+printf("|=======================|| memcpy ||========================|");
+printf("|=======================|| memmove ||=======================|");
+printf("|=======================|| memset ||========================|");
+..............................*==============================
+=============================================================
+
+(strlen) find length of string
+
+(isalnum) alphanumeric character test, it's equal (isalpha || isdigit)
+
+(isalpha) alphanumeric character test, it's equal (isupper || islower)
+
+(isascii) test for ASCII character between 0 and octal 0177
+
+(isdigit) decimal-digit character test
+
+(isprint) printing character test (space character inclusive)
+
+(strnstr) locate a substring in a n lenght string
+
+(strchr) locate first occurrence of character in string
+
+(strlcat) size-bounded string concatenation
+
+(strlcpy) size-bounded string copying
+
+(strncmp) compare strings of n lenght
+
+(strrchr) locate last occurrence of character in string
+
+(tolower) upper case to lower case letter conversion
+
+(toupper)lower case to upper case letter conversion
+
+(atoi) convert ASCII string to integer
+
+(bzero) write zeroes to a n byte string
+
+(memchr) locate byte in byte string
+
+(memcmp) compare byte string
+
+(memcpy) copy byte string
+
+(memmove) move byte string
+
+(memset) write a byte to n byte string

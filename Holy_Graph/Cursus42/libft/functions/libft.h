@@ -6,13 +6,13 @@
 /*   By: thfirmin <thiagofirmino2001@gmail.com>     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/05/11 13:45:02 by thfirmin          #+#    #+#             */
-/*   Updated: 2022/05/13 06:13:48 by thfirmin         ###   ########.fr       */
+/*   Updated: 2022/05/15 10:17:13 by thfirmin         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #ifndef LIBFT
 #define LIBFT
-typedef	unsigned long int size_t;
+#define <stdlib.h>
 int	ft_isalnum(int c);
 int	ft_isalpha(int c);
 int	ft_isascii(int c);

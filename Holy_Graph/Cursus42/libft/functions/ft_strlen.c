@@ -6,11 +6,13 @@
 /*   By: thfirmin <thfirmin@student.42.rio>         +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/05/12 20:35:17 by thfirmin          #+#    #+#             */
-/*   Updated: 2022/05/12 23:51:16 by thfirmin         ###   ########.fr       */
+/*   Updated: 2022/05/15 10:05:21 by thfirmin         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
+
+//find length of string
 
 size_t	ft_strlen(const char *str)
 {
@@ -18,8 +20,6 @@ size_t	ft_strlen(const char *str)
 
 	count = 0;
 	while (str[count] != '\0')
-	{
 		count ++;
-	}
 	return (count);
 }

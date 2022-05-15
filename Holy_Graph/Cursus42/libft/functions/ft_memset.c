@@ -6,11 +6,13 @@
 /*   By: thfirmin <thfirmin@student.42.rio>         +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/05/12 20:22:24 by thfirmin          #+#    #+#             */
-/*   Updated: 2022/05/12 20:24:58 by thfirmin         ###   ########.fr       */
+/*   Updated: 2022/05/15 10:02:18 by thfirmin         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
+
+//write a byte to n byte string
 
 void	*ft_memset(void *b, int c, size_t len)
 {

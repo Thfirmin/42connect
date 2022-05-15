@@ -6,11 +6,13 @@
 /*   By: thfirmin <thfirmin@student.42.rio>         +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/05/12 16:37:55 by thfirmin          #+#    #+#             */
-/*   Updated: 2022/05/13 06:01:32 by thfirmin         ###   ########.fr       */
+/*   Updated: 2022/05/15 09:57:57 by thfirmin         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
+
+//write zeroes to a n byte string
 
 void	ft_bzero(void *s, size_t n)
 {

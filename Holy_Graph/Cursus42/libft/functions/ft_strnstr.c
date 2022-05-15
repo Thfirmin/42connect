@@ -6,11 +6,13 @@
 /*   By: thfirmin <thfirmin@student.42.rio>         +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/05/12 20:36:45 by thfirmin          #+#    #+#             */
-/*   Updated: 2022/05/12 20:41:31 by thfirmin         ###   ########.fr       */
+/*   Updated: 2022/05/15 10:11:15 by thfirmin         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
+
+//locate a substring in a n lenght string
 
 char	*ft_strnstr(const char	*haystack, const char *needle, size_t len)
 {
@@ -19,9 +21,7 @@ char	*ft_strnstr(const char	*haystack, const char *needle, size_t len)
 
 	instack = 0;
 	if (*needle == '\0')
-	{
 		return ((char *) haystack);
-	}
 	while ((instack < len) && (haystack[instack] != '\0'))
 	{
 		inneedle = 0;

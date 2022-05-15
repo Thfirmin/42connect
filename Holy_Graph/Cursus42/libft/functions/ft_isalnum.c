@@ -6,11 +6,13 @@
 /*   By: thfirmin <thfirmin@student.42.rio>         +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/05/12 20:13:53 by thfirmin          #+#    #+#             */
-/*   Updated: 2022/05/12 20:14:07 by thfirmin         ###   ########.fr       */
+/*   Updated: 2022/05/15 10:18:17 by thfirmin         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
+
+//alphanumeric character test, it's equal (isalpha || isdigit)
 
 int	ft_isalnum(int c)
 {
@@ -24,8 +26,6 @@ int	ft_isalnum(int c)
 	{
 	}
 	else
-	{
 		return (0);
-	}
 	return (1);
 }

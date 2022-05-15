@@ -6,11 +6,13 @@
 /*   By: thfirmin <thfirmin@student.42.rio>         +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/05/12 16:37:31 by thfirmin          #+#    #+#             */
-/*   Updated: 2022/05/13 05:06:22 by thfirmin         ###   ########.fr       */
+/*   Updated: 2022/05/15 10:22:55 by thfirmin         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
+
+//convert ASCII string to integer
 
 int	ft_atoi(const char *str)
 {
@@ -35,4 +37,3 @@ int	ft_atoi(const char *str)
 	atoinum = (atoinum * signal);
 	return (atoinum);
 }
-

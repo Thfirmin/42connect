@@ -6,11 +6,13 @@
 /*   By: thfirmin <thfirmin@student.42.rio>         +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/05/12 20:34:03 by thfirmin          #+#    #+#             */
-/*   Updated: 2022/05/13 04:46:12 by thfirmin         ###   ########.fr       */
+/*   Updated: 2022/05/15 10:04:20 by thfirmin         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
+
+//size-bounded string copying
 
 size_t	ft_strlcpy(char *dst, const char *src, size_t dstsize)
 {

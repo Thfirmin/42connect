@@ -6,17 +6,16 @@
 /*   By: thfirmin <thfirmin@student.42.rio>         +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/05/12 20:15:37 by thfirmin          #+#    #+#             */
-/*   Updated: 2022/05/13 05:18:59 by thfirmin         ###   ########.fr       */
+/*   Updated: 2022/05/15 10:24:58 by thfirmin         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
+//locate byte in byte string
+
 void	*ft_memchr(const void *s, int c, size_t n)
 {
-	//int	count;
-
-	//count = 0;
 	while (n --)
 	{
 		if (*(char *) s == (char) c)
@@ -25,4 +24,3 @@ void	*ft_memchr(const void *s, int c, size_t n)
 	}
 	return ((void *) '\0');
 }
-

@@ -6,7 +6,7 @@
 /*   By: thfirmin <thfirmin@student.42.rio>         +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/05/12 20:36:03 by thfirmin          #+#    #+#             */
-/*   Updated: 2022/05/15 10:35:01 by thfirmin         ###   ########.fr       */
+/*   Updated: 2022/05/27 05:08:51 by thfirmin         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -16,7 +16,7 @@
 
 int	ft_strncmp(const char *s1, const char *s2, size_t n)
 {
-	int	count;
+	size_t	count;
 
 	count = 0;
 	while (count < (n - 1))

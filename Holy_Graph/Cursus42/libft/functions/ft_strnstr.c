@@ -6,7 +6,7 @@
 /*   By: thfirmin <thfirmin@student.42.rio>         +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/05/12 20:36:45 by thfirmin          #+#    #+#             */
-/*   Updated: 2022/05/15 10:11:15 by thfirmin         ###   ########.fr       */
+/*   Updated: 2022/05/27 05:11:31 by thfirmin         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -35,5 +35,5 @@ char	*ft_strnstr(const char	*haystack, const char *needle, size_t len)
 		if (haystack[instack] != '\0')
 			instack ++;
 	}
-	return ('\0');
+	return (0);
 }

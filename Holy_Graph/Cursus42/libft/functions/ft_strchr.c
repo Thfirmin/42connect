@@ -6,7 +6,7 @@
 /*   By: thfirmin <thfirmin@student.42.rio>         +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/05/12 20:25:02 by thfirmin          #+#    #+#             */
-/*   Updated: 2022/05/15 10:03:28 by thfirmin         ###   ########.fr       */
+/*   Updated: 2022/05/27 05:10:59 by thfirmin         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -28,5 +28,5 @@ char	*ft_strchr(const char *s, int c)
 	if (c == 0)
 		return ((char *) s + count);
 	else
-		return ('\0');
+		return (0);
 }

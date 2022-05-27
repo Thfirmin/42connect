@@ -1,36 +1,24 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_strrchr.c                                       :+:      :+:    :+:   */
+/*   ft_calloc.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: thfirmin <thfirmin@student.42.rio>         +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2022/05/12 20:41:57 by thfirmin          #+#    #+#             */
-/*   Updated: 2022/05/27 05:11:55 by thfirmin         ###   ########.fr       */
+/*   Created: 2022/05/27 05:13:14 by thfirmin          #+#    #+#             */
+/*   Updated: 2022/05/27 05:16:09 by thfirmin         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-//locate last occurrence of character in string
-
-char	*ft_strrchr(const char *s, int c)
+void	*ft_calloc(size_t count, size_t size)
 {
-	int	count;
-	int	lastocur;
+	void	*ptr;
 
-	count = 0;
-	lastocur = -1;
-	while (s[count] != '\0')
-	{
-		if (s[count] == (char) c)
-			lastocur = count;
-		count ++;
-	}
-	if (lastocur >= 0)
-		return ((char *) s + lastocur);
-	else if (c == 0)
-		return ((char *) s + count);
-	else
+	ptr = malloc(count * size);
+	if (!ptr)
 		return (0);
+	ft_memset(ptr, 48, count * size);
+	return (ptr);
 }

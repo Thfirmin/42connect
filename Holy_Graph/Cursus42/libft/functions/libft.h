@@ -6,13 +6,13 @@
 /*   By: thfirmin <thiagofirmino2001@gmail.com>     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/05/11 13:45:02 by thfirmin          #+#    #+#             */
-/*   Updated: 2022/05/15 10:17:13 by thfirmin         ###   ########.fr       */
+/*   Updated: 2022/05/27 04:35:36 by thfirmin         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #ifndef LIBFT
-#define LIBFT
-#define <stdlib.h>
+# define LIBFT
+# include <stdlib.h>
 int	ft_isalnum(int c);
 int	ft_isalpha(int c);
 int	ft_isascii(int c);
@@ -34,4 +34,5 @@ void	*ft_memcpy(void *dst, const void *src, size_t n);
 void	*ft_memmove(void *dst, const void *src, size_t len);
 int	ft_atoi(const char *str);
 void	ft_bzero(void *s, size_t n);
+void	*ft_calloc(size_t count, size_t size);
 #endif

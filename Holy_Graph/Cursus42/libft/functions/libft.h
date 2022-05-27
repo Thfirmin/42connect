@@ -6,7 +6,7 @@
 /*   By: thfirmin <thiagofirmino2001@gmail.com>     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/05/11 13:45:02 by thfirmin          #+#    #+#             */
-/*   Updated: 2022/05/27 04:35:36 by thfirmin         ###   ########.fr       */
+/*   Updated: 2022/05/27 05:26:40 by thfirmin         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -35,4 +35,5 @@ void	*ft_memmove(void *dst, const void *src, size_t len);
 int	ft_atoi(const char *str);
 void	ft_bzero(void *s, size_t n);
 void	*ft_calloc(size_t count, size_t size);
+char	*ft_strdup(const char *s1);
 #endif

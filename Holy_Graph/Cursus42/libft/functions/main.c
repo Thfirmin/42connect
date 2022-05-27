@@ -4,12 +4,11 @@
 
 int main(void)
 {
-	char	*i = (char *) ft_calloc(7, sizeof(char));
-	while (*i)
-	{
-		printf("%c\n", *i);
-		i++;
-	}
+	char	i[] = "Ola, Mundo!";
+	char	*ptr = ft_strdup(i);
+	printf ("%s\n%s\n", i, ptr);
+	strcpy(i, "ola, mundo?");
+	printf ("%s\n%s\n", i, ptr);
 	return (0);
 }
 

@@ -1,32 +1,29 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_substr.c                                        :+:      :+:    :+:   */
+/*   ft_strjoin.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: thfirmin <thfirmin@student.42.rio>         +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2022/06/04 18:25:32 by thfirmin          #+#    #+#             */
-/*   Updated: 2022/06/09 23:16:18 by thfirmin         ###   ########.fr       */
+/*   Created: 2022/06/09 23:22:34 by thfirmin          #+#    #+#             */
+/*   Updated: 2022/06/10 00:02:38 by thfirmin         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
-
-char	*ft_substr(char const *s, unsigned int start, size_t len)
+char *ft_strjoin(char const *s1, char const *s2)
 {
-	char	*str;
-	size_t	count;
+	char *newstr;
+	int len;
 
-	count = ft_strlen(s);
-	if (start > count)
-		start = count;
-	s += start;
-	count = ft_strlen(s);
-	if (len > count)
-		len = count;
-	str = malloc(sizeof(*s) * (len + 1));
-	if (!str)
-		return (NULL);
-	ft_strlcpy(str, s, len + 1);
-	return (str);
+	len = (ft_strlen(s1) + ft_strlen(s2));
+	newstr = malloc((len + 1) * sizeof(char));
+	if (!newstr)
+		return ((void *)0);
+	while (*s1)
+		*newstr++ = *s1++;
+	while (*s2)
+		*newstr++ = *s2++;
+	*newstr = '\0';
+	return (newstr - len);
 }

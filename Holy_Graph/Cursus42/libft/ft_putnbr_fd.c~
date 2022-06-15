@@ -6,11 +6,14 @@
 /*   By: thfirmin <thfirmin@student.42.rio>         +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/06/15 05:50:39 by thfirmin          #+#    #+#             */
-/*   Updated: 2022/06/15 08:39:14 by thfirmin         ###   ########.fr       */
+/*   Updated: 2022/06/15 08:38:28 by thfirmin         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
+#include <limits.h>
+#include <unistd.h>
+#include <stdio.h>
 
 void	ft_putnbr_fd(int n, int fd)
 {
@@ -30,3 +33,14 @@ void	ft_putnbr_fd(int n, int fd)
 	ft_putchar_fd(((num % 10) + '0'), 1);
 }
 
+int	main(void)
+{
+	int	c = INT_MIN;
+	int l = INT_MAX;
+	
+	ft_putnbr_fd(c, 1);
+	write (1, "\n", 1);
+	ft_putnbr_fd(l, 1);
+	write (1, "\n", 1);
+	printf ("%d\n%d\n", c, l);
+}

@@ -6,7 +6,7 @@
 /*   By: thfirmin <thfirmin@student.42.rio>         +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/06/15 05:50:39 by thfirmin          #+#    #+#             */
-/*   Updated: 2022/06/15 08:39:14 by thfirmin         ###   ########.fr       */
+/*   Updated: 2022/06/14 21:13:05 by thfirmin         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -29,4 +29,3 @@ void	ft_putnbr_fd(int n, int fd)
 	}
 	ft_putchar_fd(((num % 10) + '0'), 1);
 }
-

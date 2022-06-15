@@ -6,7 +6,7 @@
 /*   By: thfirmin <thfirmin@student.42.rio>         +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/06/15 05:37:02 by thfirmin          #+#    #+#             */
-/*   Updated: 2022/06/15 05:41:14 by thfirmin         ###   ########.fr       */
+/*   Updated: 2022/06/14 21:12:31 by thfirmin         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,5 +14,5 @@
 
 void	ft_putchar_fd(char c, int fd)
 {
-	write(fd, &c, 1);	
+	write(fd, &c, 1);
 }

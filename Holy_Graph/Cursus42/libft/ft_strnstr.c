@@ -6,7 +6,7 @@
 /*   By: thfirmin <thfirmin@student.42.rio>         +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/05/12 20:36:45 by thfirmin          #+#    #+#             */
-/*   Updated: 2022/06/09 22:51:54 by thfirmin         ###   ########.fr       */
+/*   Updated: 2022/06/14 21:23:17 by thfirmin         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,9 +14,9 @@
 
 //locate a substring in a n lenght string
 
-char	*ft_strnstr(const char	*haystack, const char *needle, size_t len)
+char	*ft_strnstr(const char *haystack, const char *needle, size_t len)
 {
-	size_t	index;
+	size_t	ndex;
 
 	index = 0;
 	if (*needle == '\0')
@@ -27,7 +27,7 @@ char	*ft_strnstr(const char	*haystack, const char *needle, size_t len)
 			return ((char *)haystack);
 		else if (*(haystack + index) == *(needle + index))
 			index ++;
-		else if (*(haystack + index) != *( needle + index))
+		else if (*(haystack + index) != *(needle + index))
 		{
 			index = 0;
 			haystack ++;
@@ -36,4 +36,3 @@ char	*ft_strnstr(const char	*haystack, const char *needle, size_t len)
 	}
 	return (0);
 }
-

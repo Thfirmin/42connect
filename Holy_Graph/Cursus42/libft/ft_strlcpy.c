@@ -6,7 +6,7 @@
 /*   By: thfirmin <thfirmin@student.42.rio>         +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/05/12 20:34:03 by thfirmin          #+#    #+#             */
-/*   Updated: 2022/06/08 07:48:10 by thfirmin         ###   ########.fr       */
+/*   Updated: 2022/06/14 21:18:37 by thfirmin         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -17,9 +17,9 @@
 size_t	ft_strlcpy(char *dst, const char *src, size_t dstsize)
 {
 	unsigned int	t_size;
-	
+
 	t_size = ft_strlen(src);
-	if(!dstsize)
+	if (!dstsize)
 		return (t_size);
 	while (dstsize > 1 && *src != '\0')
 	{

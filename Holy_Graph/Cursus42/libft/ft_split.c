@@ -6,7 +6,7 @@
 /*   By: thfirmin <thfirmin@student.42.rio>         +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/06/10 01:37:06 by thfirmin          #+#    #+#             */
-/*   Updated: 2022/06/10 06:05:55 by thfirmin         ###   ########.fr       */
+/*   Updated: 2022/06/14 21:26:42 by thfirmin         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -20,11 +20,11 @@ static int	ft_countwrd(const char *str, char set);
 
 char	**ft_split(char const *s, char c)
 {
-	int	count;
-	int	aux;
-	int	len;
-	int	start;
-	char **str;
+	int		count;
+	int		aux;
+	int		len;
+	int		start;
+	char	**str;
 
 	aux = -1;
 	start = 0;
@@ -65,7 +65,7 @@ static int	ft_countwrd(const char *str, char set)
 
 static int	ft_setlen(const char *str, char set)
 {
-	int count;
+	int	count;
 
 	count = 0;
 	while (*str != set && *str != '\0')
@@ -88,4 +88,3 @@ static int	ft_nextwrd(const char *str, char set, int start)
 	}
 	return (0);
 }
-

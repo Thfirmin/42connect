@@ -6,15 +6,15 @@
 /*   By: thfirmin <thfirmin@student.42.rio>         +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/06/15 02:16:31 by thfirmin          #+#    #+#             */
-/*   Updated: 2022/06/15 02:29:56 by thfirmin         ###   ########.fr       */
+/*   Updated: 2022/06/14 21:20:03 by thfirmin         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-char *ft_strmapi(char const *s, char (*f)(unsigned int, char))
+char	*ft_strmapi(char const *s, char (*f) (unsigned int, char))
 {
-	char	*str;
+	char			*str;
 	unsigned int	len;
 	unsigned int	i;
 
@@ -31,4 +31,3 @@ char *ft_strmapi(char const *s, char (*f)(unsigned int, char))
 	*(str + i) = '\0';
 	return (str);
 }
-

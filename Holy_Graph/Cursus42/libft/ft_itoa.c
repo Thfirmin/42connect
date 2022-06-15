@@ -6,7 +6,7 @@
 /*   By: thfirmin <thiagofirmino2001@gmail.com>     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/06/13 15:16:31 by thfirmin          #+#    #+#             */
-/*   Updated: 2022/06/13 15:18:58 by thfirmin         ###   ########.fr       */
+/*   Updated: 2022/06/14 21:10:01 by thfirmin         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -16,8 +16,8 @@ static void	ft_nbrlen(int n, int *len);
 
 char	*ft_itoa(int n)
 {
-	int len;
-	char *str;
+	int				len;
+	char			*str;
 	unsigned int	aux;
 
 	len = 0;
@@ -42,12 +42,12 @@ char	*ft_itoa(int n)
 
 static void	ft_nbrlen(int n, int *len)
 {
-	unsigned int aux;
-	
+	unsigned int	aux;
+
 	if (n < 0)
 	{
 		*len += 1;
-		aux = (n * - 1);
+		aux = (n * -1);
 	}
 	else
 		aux = n;

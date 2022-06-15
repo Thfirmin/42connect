@@ -6,7 +6,7 @@
 /*   By: thfirmin <thfirmin@student.42.rio>         +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/06/10 00:06:44 by thfirmin          #+#    #+#             */
-/*   Updated: 2022/06/10 01:34:47 by thfirmin         ###   ########.fr       */
+/*   Updated: 2022/06/14 21:24:42 by thfirmin         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -16,8 +16,8 @@ static int	ft_setcmp(char const *s1, char const *set, int p, int sig);
 
 char	*ft_strtrim(char const *s1, char const *set)
 {
-	int	start;
-	int	len;
+	int		start;
+	int		len;
 	char	*str;
 
 	start = ft_setcmp(s1, set, 0, 1);
@@ -43,4 +43,3 @@ static int	ft_setcmp(char const *s1, char const *set, int p, int sig)
 	}
 	return (p);
 }
-

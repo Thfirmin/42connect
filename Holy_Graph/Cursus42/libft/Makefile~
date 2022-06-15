@@ -42,8 +42,8 @@ ${NAME}: ${OBJS}
 all:	${NAME}
 
 so:
-	${CC} -nostartfiles -fPIC ${CFLAGS} ${SRCS}
-	gcc -nostartfiles -shared -o libft.so ${OBJS}
+	${CC} -fPIC ${CFLAGS} ${SRCS}
+	gcc -shared -o libft.so ${OBJS}
 
 clean:
 	rm -rf ${OBJS}

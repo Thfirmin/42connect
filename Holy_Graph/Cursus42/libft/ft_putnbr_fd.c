@@ -6,7 +6,7 @@
 /*   By: thfirmin <thfirmin@student.42.rio>         +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/06/15 05:50:39 by thfirmin          #+#    #+#             */
-/*   Updated: 2022/06/14 21:13:05 by thfirmin         ###   ########.fr       */
+/*   Updated: 2022/06/22 16:54:15 by thfirmin         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -18,7 +18,7 @@ void	ft_putnbr_fd(int n, int fd)
 
 	if (n < 0)
 	{
-		ft_putchar_fd('-', 1);
+		ft_putchar_fd('-', fd);
 		num = (n * -1);
 	}
 	else
@@ -27,5 +27,5 @@ void	ft_putnbr_fd(int n, int fd)
 	{
 		ft_putnbr_fd((num / 10), fd);
 	}
-	ft_putchar_fd(((num % 10) + '0'), 1);
+	ft_putchar_fd(((num % 10) + '0'), fd);
 }

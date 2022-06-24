@@ -6,7 +6,7 @@
 /*   By: thfirmin <thfirmin@student.42.rio>         +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/05/12 20:15:37 by thfirmin          #+#    #+#             */
-/*   Updated: 2022/05/15 10:24:58 by thfirmin         ###   ########.fr       */
+/*   Updated: 2022/06/22 17:22:28 by thfirmin         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -22,5 +22,5 @@ void	*ft_memchr(const void *s, int c, size_t n)
 			return ((void *) s);
 		s++;
 	}
-	return ((void *) '\0');
+	return (0);
 }

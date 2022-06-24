@@ -6,11 +6,13 @@
 /*   By: thfirmin <thiagofirmino2001@gmail.com>     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/06/13 15:16:31 by thfirmin          #+#    #+#             */
-/*   Updated: 2022/06/14 21:10:01 by thfirmin         ###   ########.fr       */
+/*   Updated: 2022/06/22 17:11:59 by thfirmin         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
+
+// Turn a integer number in a numeric string
 
 static void	ft_nbrlen(int n, int *len);
 

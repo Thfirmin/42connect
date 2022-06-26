@@ -9,6 +9,8 @@ int	main(void)
 
 	fd = open("teste.txt", O_RDONLY);
 	str = get_next_line(fd);
+	printf("Resultado: %s\n", str);
+	str = get_next_line(fd);
+	printf("Resultado: %s\n", str);
 	close(fd);
-	printf("Resultado: \"%s\"\n", str);
 }

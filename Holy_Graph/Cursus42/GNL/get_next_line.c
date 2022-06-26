@@ -6,7 +6,7 @@
 /*   By: thfirmin <thfirmin@student.42.rio>         +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/06/22 23:49:21 by thfirmin          #+#    #+#             */
-/*   Updated: 2022/06/24 17:26:41 by thfirmin         ###   ########.fr       */
+/*   Updated: 2022/06/26 00:57:09 by thfirmin         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -16,18 +16,23 @@ char	*get_next_line(int fd)
 {
 	static char	*str;
 	char		buffer[BUFFER_SIZE];
-	int			limit;
+	size_t		limit;
+	size_t		comp;
 
-	str = ((void *) 0);
-	while (ft_detectline(str))
+	comp = 0;
+	str = ft_cleanbuffer(str);
+	while (!ft_detectline(str))
 	{
 		limit = read(fd, buffer, BUFFER_SIZE);
-		if (limit)
-			str = ft_strconcate(buffer, str);
-		if (ft_getline(str))
+		if (limit <= 0 && comp <= 0)
+			return (0);
+		else if (limit < BUFFER_SIZE)
+		{
+			str = ft_strconcate(str, buffer);
+			break;
+		}
+		comp = limit;
+		str = ft_strconcate(str, buffer);
 	}
-	str = ft_cleanbuffer(str);
-	
-
-	return(buffer);
+	return(ft_getline(str));
 }

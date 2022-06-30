@@ -1,15 +1,13 @@
 #ifndef GET_NEXT_LINE_H
-# define GET_NEXT_LINE_H
-# include <stdlib.h>
-# include <unistd.h>
-# include <fcntl.h>
-# include <stdio.h>
+#define GET_NEXT_LINE_H
+#include <unistd.h>
+#include <stdlib.h>
+#include <fcntl.h>
 
 char	*get_next_line(int fd);
-int		ft_strlen(char *str);
-char	*ft_strconcate(char *str, char *buffer);
-int 	ft_detectline(char *str);
-char    *ft_cleanbuffer(char *str);
-char    *ft_getline(char *str);
+size_t	ft_detectline(char *str);
+void	ft_cleanbuffer(char *buffer);
+char	*ft_append(char *str, char *buffer, size_t limit);
+size_t	ft_strlen(char *str);
 
 #endif

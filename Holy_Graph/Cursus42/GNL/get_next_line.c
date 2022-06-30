@@ -5,8 +5,8 @@
 /*                                                    +:+ +:+         +:+     */
 /*   By: thfirmin <thfirmin@student.42.rio>         +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2022/06/22 23:49:21 by thfirmin          #+#    #+#             */
-/*   Updated: 2022/06/26 00:57:09 by thfirmin         ###   ########.fr       */
+/*   Created: 2022/06/30 08:27:58 by thfirmin          #+#    #+#             */
+/*   Updated: 2022/06/30 09:36:11 by thfirmin         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,25 +14,24 @@
 
 char	*get_next_line(int fd)
 {
-	static char	*str;
-	char		buffer[BUFFER_SIZE];
-	size_t		limit;
-	size_t		comp;
+	size_t	limit;
+	char	buffer[(BUFFER_SIZE + 1)];
+	char	*str;
 
-	comp = 0;
-	str = ft_cleanbuffer(str);
+	str = (void *)0;
 	while (!ft_detectline(str))
 	{
-		limit = read(fd, buffer, BUFFER_SIZE);
-		if (limit <= 0 && comp <= 0)
+		ft_cleanbuffer(buffer);	
+		if (*buffer == '\0')
+		{
+			limit = read(fd, buffer, BUFFER_SIZE);
+			buffer[BUFFER_SIZE] = '\0';
+		}
+		str = ft_append(str, buffer, limit);
+		if ((limit <= 0) && (*str == '\0'))
 			return (0);
 		else if (limit < BUFFER_SIZE)
-		{
-			str = ft_strconcate(str, buffer);
 			break;
-		}
-		comp = limit;
-		str = ft_strconcate(str, buffer);
 	}
-	return(ft_getline(str));
+	return(str);
 }

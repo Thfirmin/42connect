@@ -33,26 +33,41 @@ SRCS =	ft_atoi.c       \
 		ft_putendl_fd.c \
 		ft_putnbr_fd.c
 
+BONUS_SRCS = ft_lstadd_back.c  \
+			 ft_lstadd_front.c \
+			 ft_lstclear.c     \
+			 ft_lstdelone.c    \
+			 ft_lstiter.c      \
+			 ft_lstlast.c      \
+			 ft_lstmap.c       \
+			 ft_lstnew.c       \
+			 ft_lstsize.c
+
 OBJS =	${SRCS:.c=.o}
+BONUS_OBJS = ${BONUS_SRCS:.c=.o}
 CC =	cc
 AR = ar rc
 NAME =	libft.a 
 CFLAGS =	-Wall -Wextra -Werror
 
 .c.o:
-	${CC} ${CFLAGS} -c $< -o ${<:.c=.o}
+	${CC} -c $< -o ${<:.c=.o}
 
 ${NAME}: ${OBJS}
 	${AR} ${NAME} ${OBJS}
 
+
 all:	${NAME}
+
+bonus: all ${BONUS_OBJS} 
+	${AR} ${NAME} ${BONUS_OBJS}
 
 so:
 	${CC} -nostartfiles -fPIC ${CFLAGS} ${SRCS}
 	gcc -nostartfiles -shared -o libft.so ${OBJS}
 
 clean:
-	rm -rf ${OBJS}
+	rm -rf ${OBJS} ${BONUS_OBJS}
 
 fclean: clean
 		rm -rf ${NAME}

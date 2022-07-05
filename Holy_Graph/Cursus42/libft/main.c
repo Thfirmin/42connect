@@ -1,10 +1,17 @@
-#include "libft.h"
 #include <stdio.h>
+#include <stdlib.h>
+
+typedef struct s_list
+{
+	int				fd;
+	struct s_list	*next;
+} t_list;
 
 int	main(void)
 {
-	int	j = 54;
-	t_list	*pessoa;
-	pessoa = ft_lstnew(&j);
-	printf ("%d\n", pessoa -> content);
+7	t_list	**node;
+	node = (t_list *)malloc (sizeof(t_list) * 3);
+	*node -> fd = 42;
+	*node
+	printf ("%d\n", (*node).fd);
 }

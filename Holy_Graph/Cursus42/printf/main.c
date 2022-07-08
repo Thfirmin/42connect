@@ -7,10 +7,11 @@
 int	main(void)
 {
 	char c = 'S';
+	char s[] = "thiago";
 	size_t len = 0;
-	len = ft_printf("%p = %c\n", &c, c);
+	len = ft_printf("%j\n");
 	printf("%lu\n", len);
-	len = printf("%p = %c\n", &c, c);
+	len = printf("%j\n");
 	printf("%lu\n", len);
 	return (0);
 }

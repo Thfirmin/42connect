@@ -6,7 +6,7 @@
 /*   By: thfirmin <thfirmin@student.42.rio>         +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/07/01 07:24:04 by thfirmin          #+#    #+#             */
-/*   Updated: 2022/07/01 13:50:37 by thfirmin         ###   ########.fr       */
+/*   Updated: 2022/07/01 14:44:21 by thfirmin         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -90,7 +90,7 @@ size_t	ft_ftputhex(int nb, char plcholder)
 	if (nbr >= 16)
 		len += ft_ftputhex((nbr / 16), plcholder);
 	if (nbr % 16 >= 10)
-		len += ft_ftputchar(((nbr % 16) - 10) + ('A' + capital));
+		len = len + ft_ftputchar(((nbr % 16) - 10) + ('A' + capital));
 	else
 		len += ft_ftputchar((nbr % 16) + '0');
 	return (len);

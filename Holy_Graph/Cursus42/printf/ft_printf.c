@@ -6,7 +6,7 @@
 /*   By: thfirmin <thfirmin@student.42.rio>         +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/06/30 23:58:21 by thfirmin          #+#    #+#             */
-/*   Updated: 2022/07/01 12:12:54 by thfirmin         ###   ########.fr       */
+/*   Updated: 2022/07/01 14:55:45 by thfirmin         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -37,6 +37,7 @@ int	ft_printf(const char *ptstr, ...)
 			len += ft_ftputchar(ptstr[i++]);
 		}
 	}
+	va_end(plcvalue);
 	return (len);
 }
 
@@ -61,3 +62,5 @@ size_t	holderfinder(const char plcholder, va_list plcvalue)
 		len += ft_ftputhex(va_arg(plcvalue, int), plcholder);
 	return (len);
 }
+
+

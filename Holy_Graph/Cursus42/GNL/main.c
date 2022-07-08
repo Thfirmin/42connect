@@ -12,8 +12,8 @@ int	main(void)
 	{
 		str = get_next_line(fd);
 		printf("%s", str);
-		if (str)
-			free(str);
+		//if (str)
+		//	free(str);
 	}while (str);
 	close(fd);
 }

@@ -9,7 +9,7 @@ NAME = libftprintf.a
 CFLAGS = -Wall -Wextra -Werror -I include
 
 .c.o:
-	cc ${CFLAGS} -c &< -o ${<:.c=.o}
+	cc ${CFLAGS} -c $< -o ${<:.c=.o}
 
 ${NAME}: ${OBJS}
 	cd ./libft && make && cp -v libft.a ../${NAME}

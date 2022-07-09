@@ -193,5 +193,5 @@ Configure ssh
 >#cd /etc/ssh
 >#vim sshd_config
 	* delete ‘#’ in port22 and change “22” to “4242”
-	* delete ‘#’ in PermitRootLogin and alternate “prohibit…” to “no”
+	* delete ‘#’ in PermitRootLogin “prohibit…”
 

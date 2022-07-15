@@ -9,16 +9,25 @@ char	*get_next_line(int fd);
 int	main(void)
 {
 	char	*str;
-	int		fd;
+	int		fd[15];
+	char	*files[] = {"files/41_no_nl", "files/41_with_nl", "files/42_no_nl", "files/42_with_nl", "files/43_no_nl", "files/43_with_nl", "files/alternate_line_nl_no_nl", "files/alternate_line_nl_with_nl", "files/big_line_no_nl", "files/big_line_with_nl", "files/multiple_line_no_nl", "files/multiple_line_with_nl", "files/multiple_nlx5", "files/empty", "files/nl"};
 
-	fd = open("teste.txt", O_RDONLY);
-	do
+	for (int i = 0; i < 15 ; i++)
 	{
-		str = get_next_line(fd);
-		printf("Resultado: \"%s\"\n", str);
-		if (str)
-			free(str);
+		fd[i] = open(files[i], O_RDONLY);
 	}
-	while (str);
-	close (fd);
+	for (int i = 0 ; i < 15 ; i++)
+	{
+		printf("%s\n_____________________________________________________________________\n", files[i]);
+		do
+		{
+			str = get_next_line(fd[i]);
+			printf("%s", str);
+			if (str)
+				free(str);
+		}
+		while (str);
+		printf("\n_____________________________________________________________________\n");
+		close (fd[i]);
+	}
 }

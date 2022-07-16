@@ -1,0 +1,195 @@
+Requerimentos: 
+* 2,8G or Goinfree
+* Virtual Box (VB)
+* .ISO (Debian or Cent OS)
+
+Mounting Virtual Machine
+In Virtual Box:
+1. <New> button
+    1. Put machine name (Ex. Debian)
+    2. Declare the folder to save the VM 
+        * If you don’t make de bonus part, you can use your local memory to mount the machine, otherwise you’ll need to use the goinfree directory
+        * In first case, generally the standard option is useful
+        * In other case, choose the goinfree directory and creat an directory named as your login name
+    3. Type: Linux
+    4. Version (Debian | Cent OS) (64-bit)
+    5. Press <Continue>
+2. Memory Size
+    1. The “sr0” in pdf set the RAM memory size
+3. Hard Disk
+    1. You’ll creat a virtual hard disk now
+4. Hard Disk File Type
+    1. You’ll use the VirtualBox Disk Image (VDI) option
+5. Storage on Physical Hard Disk
+    1. Is a fixed size
+6. File Location and Size
+    1. The root partition (sda) in pdf set the ROM memory size
+7. Start the VM; Select the .iso you’ve downloaded and press <start> again.
+
+Configure VM:
+* [OPTIONAL] In beginning of VM the CLI have a strange graphical color with blue/white/black. To change this, you’ll access:
+1. Accessible dark contrast installer menu
+2. Install
+Configure Debian:
+1. Choose language
+    1. You can choose the pt-br lang, but i recommend you to choose the en-us lang
+2. Select your location
+    1. You can choose the Brazil location if you choose (other/South America/Brazil)
+3. Configure Locales
+    1. You’ll choose the United state option 
+4. Configure the keyboard
+    1. You will choose the keyboard option based in your keyboard
+5. Configure the network
+    1. Hostname (login name + 42)
+    2. Domain name (null)
+    3. Root password and confirmation (a password of your preference)
+    4. Full name of the new user (login name)
+    5. Username for your account (login name again)
+    6. Password for the new user and confirmation (a password of your preference)
+6. Configure the clock (Your location)
+
+Partition Debian
+* Without Bonus part
+    1. Set guided option entry disk and set up encrypt LVM
+    2. Select Disk
+    3. Separated Partition to /home and confirm
+    4. Confirm the porra toda
+    5. Finish Partition
+* With Bonus part
+    1. Set the manual partition option
+    2. Sda1:
+        1. Select your disk and confirm the partitionation
+        2. Select the free space and create a new partition
+        3. Choose 500 MB and declare it as an primary partition
+        4. Choose the mount point option and select the \boot option
+        5. Done and setting up the partition
+    3. Sda5:
+        1. Select the pri/log free space and create a new partition
+        2. Set the “max” memory to use
+        3. Set the partition as an logical partition
+        4. Done and setting up partition
+    4. Sda5_crypt:
+        1. Configure encrypted volumes
+            1. Select sda5 with space bar button
+            2. confirm configuration
+            3. done and setting up partition
+            4. Finish and choose if you want to formate the disk
+            5. Choose a passphrase for encryption and confirm it (if your passphrase is weak, the system’ll warning you about it and you’ll confirm )
+        2. sda5_crypt (LVMGroup):
+            1. Configure the Logical Volume Manager (LVM) and confirm the choose
+            2. Create an volume groups
+            3. Choose the name of volume group (LVMGroup)
+            4. Select sda5_crypt with space bar button
+            5. Close LVM configuration
+        3. LVMGroup-root:
+            1. Open LVM config
+            2. Create a logical volume
+            3. Select LVMGroup
+            4. Set the name (root)
+            5. Set the memory (10G)
+            6. Close LVM config
+            7. Select # 10GB in (LVMGroup, LV root)
+            8. Select Use as: (EXT4)
+            9. Select mount point to (\ - The root file system)
+            10. Done setting up the partition
+        4. LVMGroup-swap
+            1. Open LVM config
+            2. Create a logical volume
+            3. Select LVMGroup
+            4. Set the name (swap)
+            5. Set the memory (2.3G)
+            6. Close LVM config
+            7. Select # 2.3GB in (LVMGroup, LV swap)
+            8. Select Use as: (Swap Area)
+            9. Done setting up the partition
+        5. LVMGroup-home
+            1. Open LVM config
+            2. Create a logical volume
+            3. Select LVMGroup
+            4. Set the name (home)
+            5. Set the memory (5G)
+            6. Close LVM config
+            7. Select # 5GB in (LVMGroup, LV home)
+            8. Select Use as: (EXT4)
+            9. Select mount point to (\home - The User directory)
+            10. Done setting up the partition
+        6. LVMGroup-var
+            1. Open LVM config
+            2. Create a logical volume
+            3. Select LVMGroup
+            4. Set the name (var)
+            5. Set the memory (3G)
+            6. Close LVM config
+            7. Select # 3GB in (LVMGroup, LV var)
+            8. Select Use as: (EXT4)
+            9. Select mount point to (\var - Variable Data)
+            10. Done setting up the partition
+        7. LVMGroup-srv
+            1. Open LVM config
+            2. Create a logical volume
+            3. Select LVMGroup
+            4. Set the name (srv)
+            5. Set the memory (3G)
+            6. Close LVM config
+            7. Select # 3GB in (LVMGroup, LV srv)
+            8. Select Use as: (EXT4)
+            9. Select mount point to (\srv - Data for for services system)
+            10. Done setting up the partition
+        8. LVMGroup-tmp
+            1. Open LVM config
+            2. Create a logical volume
+            3. Select LVMGroup
+            4. Set the name (tmp)
+            5. Set the memory (3G)
+            6. Close LVM config
+            7. Select # 3GB in (LVMGroup, LV tmp)
+            8. Select Use as: (EXT4)
+            9. Select mount point to (\tmp - Temporary files)
+            10. Done setting up the partition
+        9. LVMGroup-var—log
+            1. Open LVM config
+            2. Create a logical volume
+            3. Select LVMGroup
+            4. Set the name (var—log)
+            5. Set the memory (remaining memory)
+            6. Close LVM config
+            7. Select # 8.3G in (LVMGroup, LV var—log)
+            8. Select Use as: (EXT4)
+            9. Select mount point to (Enter Manually -> \var\log)
+            10. Done setting up the partition
+    5. Choose finish Partition and write change disk
+
+Configure the Package Manager
+1. Detect and mount installation media
+    1. Choose no for scan media
+2. Choose country to search mirror for package manager
+    1. Choose USA or Brazil
+3. Install the base system
+    1. Choose font source (deb.debian.org)
+4. Configure HTTP proxy (Null)
+5. Configuration popularity contest (no)
+6. Software select
+    1. Desmark all options to have more control of what is be installed
+7. Install the GRUB boot loader
+    1. Choose yes and select your disk
+8. Finish the installation
+
+Iniciando SO
+Install Packages
+* Sudo
+* Ssh
+* Vim
+* Uff
+
+Include user groups into sudo and user42 groups
+>$su
+>#sudo usermod -aG sudo thfirmin
+>#sudo addgroup user42
+>#sudo usermod -aG user42 thfirmin
+
+Configure ssh
+>#cd /etc/ssh
+>#vim sshd_config
+	* delete ‘#’ in port22 and change “22” to “4242”
+	* delete ‘#’ in PermitRootLogin and alternate “prohibit…” to “no”
+

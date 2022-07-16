@@ -1,0 +1,41 @@
+Bash B2BR
+
+Pergiuntas
+
+O que é e como uma máquina virtual funciona? Qual é o seu propósito?
+Porque escolheu Debian ao invés de CentOS e qual é a diferença entre os dois?
+O que é AppArmor e qual é a diferença entre o apt e o aptitude
+
+
+
+
+#!/bin/bash
+
+USER="thfirmin"
+
+# Instalacao de pacotes necessário: 
+#sudo para permissão root instantanea.
+apt install -y sudo
+# ssh para conexão remota
+apt install -y ssh
+# vim para editar textos
+apt install -y vim
+# ufw para controlar regra de firewall
+apt install -y ufw
+# pamquality para controlar política de senhas.
+apt install -y libpam-pwquality
+
+# Colocar usuário no grupo sudo
+sudo usermod-aG sudo thfirmin
+# Criar grupo “user42”
+sudo addgroup user42
+# Colocar usuario no grupo user42
+sudo usermod -aG user42 thfirmin
+
+#Configure ssh
+echo  “Apague o \‘\#\’ em \”port22\” e mude \“22\” por \“4242\””
+echo “Apague o \‘#\’ em \”PermitRootLogin\” e mude \“prohibit…\” para \“no\” ou deixe como esta”
+sleep 15
+# Entrar na pasta do arquivo de configuração do servidor ssh
+cd /etc/ssh && vim sshd_config
+

@@ -6,7 +6,7 @@
 /*   By: thfirmin <thfirmin@student.42.rio>         +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/07/14 02:14:25 by thfirmin          #+#    #+#             */
-/*   Updated: 2022/07/14 20:55:03 by thfirmin         ###   ########.fr       */
+/*   Updated: 2022/07/15 21:35:18 by thfirmin         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,8 +14,6 @@
 # define GET_NEXT_LINE_H
 # include <stdlib.h>
 # include <unistd.h>
-# include <fcntl.h>
-# include <stdio.h>
 
 char	*get_next_line(int fd);
 char	*read_line(int fd, char *str);

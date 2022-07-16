@@ -46,9 +46,9 @@ BONUS_SRCS = ft_lstadd_back.c  \
 OBJS =	${SRCS:.c=.o}
 BONUS_OBJS = ${BONUS_SRCS:.c=.o}
 CC =	cc
-AR = ar rc
+AR = ar rcs
 NAME =	libft.a 
-CFLAGS =	-Wall -Wextra -Werror
+CFLAGS = "-Wall -Wextra -Werror"
 
 .c.o:
 	${CC} -c $< -o ${<:.c=.o}
@@ -74,4 +74,4 @@ fclean: clean
 
 re:	fclean	bonus
 
-
+.PHONY: all clean fclean bonus re

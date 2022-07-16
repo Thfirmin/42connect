@@ -6,7 +6,7 @@
 /*   By: thfirmin <thfirmin@student.42.rio>         +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/07/14 01:28:52 by thfirmin          #+#    #+#             */
-/*   Updated: 2022/07/14 05:39:48 by thfirmin         ###   ########.fr       */
+/*   Updated: 2022/07/15 21:36:40 by thfirmin         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -21,7 +21,7 @@ void	*ft_calloc(int count, int size)
 	ptr = malloc (count * size);
 	if (!ptr)
 		return (0);
-	while (len < (unsigned int) (count * size))
+	while (len < (unsigned int)(count * size))
 		*(ptr + len++) = 0;
 	return ((void *) ptr);
 }

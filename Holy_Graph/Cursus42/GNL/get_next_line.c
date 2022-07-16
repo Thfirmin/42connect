@@ -6,7 +6,7 @@
 /*   By: thfirmin <thfirmin@student.42.rio>         +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/06/22 23:49:21 by thfirmin          #+#    #+#             */
-/*   Updated: 2022/07/15 15:09:38 by thfirmin         ###   ########.fr       */
+/*   Updated: 2022/07/15 21:40:29 by thfirmin         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -20,7 +20,11 @@ char	*get_next_line(int fd)
 	if (!str)
 		str = ft_calloc(1, 1);
 	if (read(fd, 0, 0) || BUFFER_SIZE <= 0)
+	{
+		free(str);
+		str = (void *)0;
 		return (0);
+	}
 	str = read_line(fd, str);
 	line = take_line(str);
 	str = clean_buffer(str);
@@ -44,12 +48,12 @@ char	*read_line(int fd, char *str)
 		buffer[bytes] = '\0';
 		str = ft_strjoin(str, buffer);
 		if ((bytes < BUFFER_SIZE && *str) || !str)
-			break;
+			break ;
 		else if (*str == '\0' && bytes <= 0)
 		{
 			free (str);
 			str = (void *)0;
-			break;
+			break ;
 		}
 	}
 	free(buffer);
@@ -71,12 +75,11 @@ char	*ft_strjoin(char *s1, char *s2)
 		free (s1);
 		return (0);
 	}
-	if (s1)
-		while (*(s1 + i))
-		{
-			newstr[i] = s1[i];
-			i ++;
-		}
+	while (*(s1 + i))
+	{
+		newstr[i] = s1[i];
+		i ++;
+	}
 	if (s2)
 		while (*s2)
 			newstr[i++] = *s2++;
@@ -90,7 +93,7 @@ char	*take_line(char *str)
 	char	*line;
 	size_t	len;
 
-	len =0;
+	len = 0;
 	if (!str)
 		return (0);
 	while (str[len] != '\n' && str[len])

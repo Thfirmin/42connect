@@ -37,14 +37,14 @@ let s:so_save = &so | let s:siso_save = &siso | set so=0 siso=0
 let v:this_session=expand("<sfile>:p")
 silent only
 silent tabonly
-cd ~/workspace/get_next_line_project
+cd ~/42connect/Holy_Graph/Cursus42/GNL
 if expand('%') == '' && !&modified && line('$') <= 1 && getline(1) == ''
   let s:wipebuf = bufnr('%')
 endif
 set shortmess=aoO
 argglobal
 %argdel
-$argadd get_next_line_bonus.c
+$argadd get_next_line_utils_bonus.c
 set stal=2
 tabnew
 tabrewind
@@ -61,8 +61,8 @@ set winminheight=0
 set winheight=1
 set winminwidth=0
 set winwidth=1
-exe 'vert 1resize ' . ((&columns * 135 + 136) / 272)
-exe 'vert 2resize ' . ((&columns * 136 + 136) / 272)
+exe 'vert 1resize ' . ((&columns * 136 + 136) / 272)
+exe 'vert 2resize ' . ((&columns * 135 + 136) / 272)
 argglobal
 setlocal noautoindent
 setlocal backupcopy=
@@ -182,11 +182,11 @@ setlocal nowinfixwidth
 set nowrap
 setlocal nowrap
 setlocal wrapmargin=0
-let s:l = 19 - ((18 * winheight(0) + 30) / 60)
+let s:l = 1 - ((0 * winheight(0) + 30) / 60)
 if s:l < 1 | let s:l = 1 | endif
 exe s:l
 normal! zt
-19
+1
 normal! 0
 wincmd w
 argglobal
@@ -309,15 +309,15 @@ setlocal nowinfixwidth
 set nowrap
 setlocal nowrap
 setlocal wrapmargin=0
-let s:l = 59 - ((49 * winheight(0) + 30) / 60)
+let s:l = 1 - ((0 * winheight(0) + 30) / 60)
 if s:l < 1 | let s:l = 1 | endif
 exe s:l
 normal! zt
-59
-normal! 012|
+1
+normal! 0
 wincmd w
-exe 'vert 1resize ' . ((&columns * 135 + 136) / 272)
-exe 'vert 2resize ' . ((&columns * 136 + 136) / 272)
+exe 'vert 1resize ' . ((&columns * 136 + 136) / 272)
+exe 'vert 2resize ' . ((&columns * 135 + 136) / 272)
 tabnext
 edit get_next_line_bonus.h
 set splitbelow splitright
@@ -447,20 +447,17 @@ setlocal nowinfixwidth
 set nowrap
 setlocal nowrap
 setlocal wrapmargin=0
-let s:l = 23 - ((22 * winheight(0) + 30) / 60)
+let s:l = 1 - ((0 * winheight(0) + 30) / 60)
 if s:l < 1 | let s:l = 1 | endif
 exe s:l
 normal! zt
-23
-normal! 03|
+1
+normal! 0
 tabnext 1
 set stal=1
-badd +1 get_next_line_bonus.c
-badd +1 get_next_line_bonus.h
 badd +0 get_next_line_utils_bonus.c
-badd +1 ~/42rio_repo/Holy_Graph/cursus42/rank00/libft/libft.h
-badd +1 ~/42connect/Holy_Graph/Cursus42/libft/libft.a
-badd +1 ~/42connect/Holy_Graph/Cursus42/libft/libft.h
+badd +0 get_next_line_bonus.c
+badd +0 get_next_line_bonus.h
 if exists('s:wipebuf') && len(win_findbuf(s:wipebuf)) == 0
   silent exe 'bwipe ' . s:wipebuf
 endif

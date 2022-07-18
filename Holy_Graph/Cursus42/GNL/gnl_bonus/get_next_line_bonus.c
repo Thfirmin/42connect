@@ -6,7 +6,7 @@
 /*   By: thfirmin <thfirmin@student.42.rio>         +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/06/22 23:49:21 by thfirmin          #+#    #+#             */
-/*   Updated: 2022/07/16 04:53:06 by thfirmin         ###   ########.fr       */
+/*   Updated: 2022/07/18 02:56:16 by thfirmin         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,26 +15,23 @@
 char	*get_next_line(int fd)
 {
 	static f_list	*list_files;
-	f_list			*list;
+	f_list			*node;
 	char			*line;
 
 	if (!list_files)
-	{
-		list_files = (f_list *) ft_calloc (sizeof(f_list), 1);
-		list_files -> f_str = ft_calloc(1, 1);
-		list_files -> f_fd = fd;
-		list_files -> newfile = 0;
-	}
-	list = backup_line(fd, list_files);
+		list_files = addnew_list(fd, list_files);
+	node = backup_line(fd, list_files);
+	if (!node)
+		node = addnew_list(fd, list_files);
 	if (read(fd, 0, 0) || BUFFER_SIZE <= 0)
 	{
-		free(list -> f_str);
-		list -> f_str = (void *)0;
+		free(node -> f_str);
+		node -> f_str = (void *)0;
 		return (0);
 	}
-	list -> f_str = read_line(fd, list -> f_str);
-	line = take_line(list -> f_str);
-	list -> f_str = clean_buffer(list -> f_str);
+	node -> f_str = read_line(fd, node -> f_str);
+	line = take_line(node -> f_str);
+	node -> f_str = clean_buffer(node -> f_str);
 	return (line);
 }
 
@@ -54,9 +51,9 @@ char	*read_line(int fd, char *str)
 		bytes = read(fd, buffer, BUFFER_SIZE);
 		buffer[bytes] = '\0';
 		str = ft_strjoin(str, buffer);
-		if ((bytes < BUFFER_SIZE && *str) || !str)
+		if (!str || (bytes < BUFFER_SIZE) && (*str))
 			break ;
-		else if (*str == '\0' && bytes <= 0)
+		else if ((*str == '\0') && (bytes <= 0))
 		{
 			free (str);
 			str = (void *)0;
@@ -73,8 +70,10 @@ char	*ft_strjoin(char *s1, char *s2)
 	size_t	i;
 	char	*newstr;
 
+	if (!s1)
+		return (0);
 	newstr = (void *)0;
-	i = 0;
+	i = -1;
 	len = (ft_strlen(s1) + ft_strlen(s2));
 	newstr = ft_calloc((len + 1), sizeof(char));
 	if (!newstr)
@@ -82,11 +81,8 @@ char	*ft_strjoin(char *s1, char *s2)
 		free (s1);
 		return (0);
 	}
-	while (*(s1 + i))
-	{
+	while (*(s1 + ++i))
 		newstr[i] = s1[i];
-		i ++;
-	}
 	if (s2)
 		while (*s2)
 			newstr[i++] = *s2++;
@@ -100,9 +96,9 @@ char	*take_line(char *str)
 	char	*line;
 	size_t	len;
 
-	len = 0;
 	if (!str)
 		return (0);
+	len = 0;
 	while (str[len] != '\n' && str[len])
 		len ++;
 	if (str[len] == '\n')
@@ -128,10 +124,10 @@ char	*clean_buffer(char *buffer)
 	char	*str;
 	size_t	i;
 
-	len = 0;
-	i = 0;
 	if (!buffer)
 		return (0);
+	len = 0;
+	i = 0;
 	while (buffer[len] != '\n' && buffer[len])
 		len ++;
 	if (buffer[len] == '\n')

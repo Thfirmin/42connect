@@ -1,31 +1,33 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   get_next_line.h                                    :+:      :+:    :+:   */
+/*   get_next_line_copy.h                               :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: thfirmin <thfirmin@student.42.rio>         +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2022/07/14 02:14:25 by thfirmin          #+#    #+#             */
-/*   Updated: 2022/07/17 20:12:02 by thfirmin         ###   ########.fr       */
+/*   Created: 2022/07/12 23:46:52 by thfirmin          #+#    #+#             */
+/*   Updated: 2022/07/17 15:38:20 by thfirmin         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#ifndef GET_NEXT_LINE_H
-# define GET_NEXT_LINE_H
+#ifndef GET_NEXT_LINE_COPY_H
+# define GET_NEXT_LINE_COPY_H
+
 # ifndef BUFFER_SIZE
-#  define BUFFER_SIZE (42)
+#  define BUFFER_SIZE (1)
 # endif
-# include <stdlib.h>
+
+# define MAX_FD (256) // FD limit in macOS: ulimit -Sn
+
 # include <unistd.h>
+# include <stdlib.c>
+# include <stdio.h>
+# include <fcntl.h>
 
 char	*get_next_line(int fd);
-char	*read_line(int fd, char *str);
-char	*take_line(char *str);
-void	*ft_calloc(int count, int size);
-char	*ft_strchr(char *str, int c);
-char	*ft_strjoin(char *s1, char *s2);
-size_t	ft_strlen(char *str);
-char	*take_line(char *str);
-char	*clean_buffer(char *buffer);
+
+void	*ft_memcpy(void *dst, const void *src, size_t n);
+char	*ft_strdup(char *s);
+int		ft_strlen(char *s);
 
 #endif

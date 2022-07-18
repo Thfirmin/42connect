@@ -1,27 +1,27 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   get_next_line.h                                    :+:      :+:    :+:   */
+/*   get_next_line_copy.c                               :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: thfirmin <thfirmin@student.42.rio>         +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2022/07/14 02:14:25 by thfirmin          #+#    #+#             */
-/*   Updated: 2022/07/14 05:18:06 by thfirmin         ###   ########.fr       */
+/*   Created: 2022/07/12 23:44:58 by thfirmin          #+#    #+#             */
+/*   Updated: 2022/07/17 19:17:07 by thfirmin         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#ifndef GET_NEXT_LINE_H
-# define GET_NEXT_LINE_H
-# include <stdlib.h>
-# include <unistd.h>
-# include <fcntl.h>
-# include <stdio.h>
+#include "get_next_line_copy.h"
 
-char	*get_next_line(int fd);
-char	*capture_line(int fd, char *str);
-void	*ft_calloc(int count, int size);
-char	*ft_strchr(char *str, int c);
-char	*ft_strjoin(char *s1, char *s2);
-size_t	ft_strlen(char *str);
+char	*get_next_line(int fd)
+{
+	static char	*cache;
+	char		*line;
+	ssize_t		flag;
 
-#endif
+	line = (void *)0;
+	flag = 0;
+	if (BUFFER_SIZE < 1 || fd < 0 || fd > MAX_FD)
+		return (0);
+	cache = ft_strdup("");
+	line 
+}

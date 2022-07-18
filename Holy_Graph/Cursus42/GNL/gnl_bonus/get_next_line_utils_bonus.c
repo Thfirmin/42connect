@@ -6,7 +6,7 @@
 /*   By: thfirmin <thfirmin@student.42.rio>         +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/07/14 01:28:52 by thfirmin          #+#    #+#             */
-/*   Updated: 2022/07/16 04:59:48 by thfirmin         ###   ########.fr       */
+/*   Updated: 2022/07/18 01:23:31 by thfirmin         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -52,19 +52,16 @@ size_t	ft_strlen(char *str)
 
 f_list	*backup_line(int fd, f_list *list)
 {
-	if (!list)
-		list = addnew_list(fd);
-	while (list -> newfile)
+	while (list)
 	{
 		if (list -> f_fd == fd)
 			return (list);
 		list = list -> newfile;
 	}
-	list -> newfile = addnew_list(fd);
-	return (list);
+	return (0);
 }
 
-f_list	*addnew_list(int fd)
+f_list	*addnew_list(int fd, f_list *list)
 {
 	f_list	*new ;
 
@@ -72,7 +69,15 @@ f_list	*addnew_list(int fd)
 	if (!new)
 		return (0);
 	new -> f_fd = fd;
-	new -> f_str = (void *) 0;
+	new -> f_str = ft_calloc(1, 1);
 	new -> newfile = 0;
+	if (!list)
+		list = new;
+	else
+	{
+		while (list -> newfile)
+			list = list -> newfile;
+		list -> newfile = new;
+	}
 	return (new);
 }

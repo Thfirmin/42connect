@@ -3,7 +3,10 @@
 echo "rebot in final of program? [y/n]"
 read ANSWER
 
-USER="thfirmin"
+echo "whats your 42 login?"
+read USER
+
+NAME=monitoring.sh
 
 PKGS="
 libpam-pwquality
@@ -69,40 +72,31 @@ sleep 1
 cd /etc
 sed -i s/'PASS_MAX_DAYS\t99999'/'PASS_MAX_DAYS\t30'/ login.defs
 sed -i s/'PASS_MIN_DAYS\t0'/'PASS_MIN_DAYS\t2'/ login.defs
+sudo chage -m 2 $USER
+sudo chage -M 30 $USER
+sudo chage -m 2 root
+sudo chage -M 30 root
 sleep 1
+
+cd /usr/bin
+echo -e "#!/bin/bash\n" > $NAME
+echo "let MEMTOTAL=\$(free -m | grep 'Mem:' | awk '{print\$2}')" >> $NAME
+echo -e "let MEMUSED=\$(free -m | grep 'Mem:' | awk '{print\$3}')" >> $NAME
+echo "wall \"" >> $NAME
+echo "#Architecture: \$(uname -a)" >> $NAME
+echo "#CPU physical : \$(lscpu | grep '^CPU(s)' | awk '{print\$2}')" >> $NAME
+echo "#Memory Usage: echo -e \"\${MEMUSED}/\${MEMTOTAL}MB \\(\$(free -m | grep 'Mem' | awk '{printf\"%.2f\", \$3/\$2*100}')\\)\"" >> $NAME
+echo "#Disk Usage: \$(df -h --total | grep 'total'| awk '{printf\"%.1f/%dGb (%s)\", \$3, \$2, \$5}')" >> $NAME
+echo "#CPU load: \$(vmstat 1 2 | tail -1 | awk '{printf\"%.1f%%\",(100 - \$15)}')" >> $NAME
+echo "#Last boot: \$(uptime -s)" >> $NAME
+echo "#LVM use: \$(if [ \$(lsblk | grep \"lvm\" | wc -l) -eq 0 ]; then echo \"no\"; else echo \"yes\"; fi)" >> $NAME
+echo "#Connections TCP : \$(ss -t | grep \"ESTAB\" | wc -l) ESTABILISHED" >> $NAME
+echo "#User log: \$(who | cut -d \" \" -f 1 | sort -u | wc -l)" >> $NAME
+echo "#Network: \$(hostname -I)" >> $NAME
+echo -e "#Sudo : \$(cat /var/log/sudo.log | grep \"COMMAND\" | wc -l) cmd\n\"" >> $NAME
 
 # Rebootar
 if [ ${ANSWER} == "y" ];then
 	sudo reboot
 fi
 
-#Architecture: Linux wil 4.19.0-16-amd64 #1 SMP Debian 4.19.181-1 (2021-03-19) x86_64 GNU/Linux
-#CPU physical : 1
-#vCPU : 1
-#Memory Usage: 74/987MB (7.50%)
-#Disk Usage: 1009/2Gb (39%)
-#CPU load: 6.7%
-#Last boot: 2021-04-25 14:45
-#LVM use: yes
-#Connections TCP : 1 ESTABLISHED
-#User log: 1
-#Network: IP 10.0.2.15 (08:00:27:51:9b:a5)
-#Sudo : 42 cm
-
-let MEMTOTAL=$(free -m | grep 'Mem:' | awk '{print$2}')
-let MEMUSED=$(free -m | grep 'Mem:' | awk '{print$3}')
-
-wall "
-#Architecture: $(uname -a)
-#CPU physical : $(lscpu | grep '^CPU(s)' | awk '{print$2}')
-#vCPU : $(lscpu | grep '^CPU(s)' | awk '{print$2}')
-#Memory Usage: echo -e "${MEMUSED}/${MEMTOTAL}MB \($(free -m | grep 'Mem' | awk '{printf"%.2f", $3/$2*100}')\)"
-#Disk Usage: $(df -h --total | grep 'total'| awk '{printf"%.1f/%dGb (%s)", $3, $2, $5}')
-#CPU load: $(vmstat 1 2 | tail -1 | awk '{printf"%.1f%%",(100 - $15)}')
-#Last boot: $(uptime -s)
-#LVM use: $(if [ $(lsblk | grep "lvm" | wc -l) -eq 0 ]; then echo "no"; else echo "yes"; fi)
-#Connections TCP : $(ss -t | grep "ESTAB" | wc -l) ESTABILISHED
-#User log: $(who | cut -d " " -f 1 | sort -u | wc -l)
-#Network: $(hostname -I)
-#Sudo : $(cat /var/log/sudo.log | grep "COMMAND" | wc -l) cmd
-"

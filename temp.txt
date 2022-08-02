@@ -1,0 +1,27 @@
+BIg O X Omega(Ω)
+
+Big O: limite de tempo de execução
+Omega: Tempo minimo de execução
+
+
+O(n²)
+O(n log n)
+O(n)
+O(log n)
+O(1)
+
+Ω(n²)
+Ω(n log n)
+Ω(n)
+Ω(log n)
+Ω(1)
+
+Theta (Θ)
+
+Tempo de Big O e Omega identicos
+
+Θ(n²)
+Θ(n log n)
+Θ(n)
+Θ(log n)
+Θ(1)
